@@ -12,7 +12,11 @@ contract Forwarder is ERC2771Forwarder {
         bool success
     );
 
-    constructor(string memory name) ERC2771Forwarder(name) {}
+    string public name_;
+
+    constructor(string memory name) ERC2771Forwarder(name) {
+        name_ = name;
+    }
 
     /**
      * @dev Executes a single forward request.
